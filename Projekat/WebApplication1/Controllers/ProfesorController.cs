@@ -272,6 +272,66 @@ namespace WebApplication1.Controllers
             return RedirectToAction(nameof(MojiPredmeti));
         }
 
+        // GET: Dekan/EditProfesorPredmeti/{id}
+        [Authorize(Roles = "Dekan")]
+        public async Task<IActionResult> EditProfesorPredmeti(string id)
+        {
+            var profesor = await _context.Users
+                .Include(p => p.KorisnikPredmet)
+                .FirstOrDefaultAsync(p => p.Id == id && p.uloga == Uloga.Profesor);
+
+            if (profesor == null) return NotFound();
+
+            var sviPredmeti = await _context.Predmet.ToListAsync();
+
+            var model = new ProfesorPredmetiModel
+            {
+                ProfesorId = profesor.Id,
+                ImePrezime = profesor.Ime + " " + profesor.Prezime,
+                Predmeti = sviPredmeti.Select(p => new PredmetCheckboxModel
+                {
+                    PredmetID = p.PredmetID,
+                    ImePredmeta = p.ImePredmeta,
+                    IsSelected = profesor.KorisnikPredmet.Any(kp => kp.PredmetID == p.PredmetID)
+                }).ToList()
+            };
+
+            return View("~/Views/Profesori/EditProfesorPredmeti.cshtml", model);
+
+        }
+
+        // POST: Dekan/EditProfesorPredmeti
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Dekan")]
+        public async Task<IActionResult> EditProfesorPredmeti(ProfesorPredmetiModel model)
+        {
+            var profesor = await _context.Users
+                .Include(p => p.KorisnikPredmet)
+                .FirstOrDefaultAsync(p => p.Id == model.ProfesorId && p.uloga == Uloga.Profesor);
+
+            if (profesor == null) return NotFound();
+
+            // Obrisi stare predmete
+            var stari = _context.KorisnikPredmet.Where(kp => kp.KorisnikId == profesor.Id);
+            _context.KorisnikPredmet.RemoveRange(stari);
+
+            // Dodaj nove
+            foreach (var p in model.Predmeti.Where(p => p.IsSelected))
+            {
+                _context.KorisnikPredmet.Add(new KorisnikPredmet
+                {
+                    KorisnikId = profesor.Id,
+                    PredmetID = p.PredmetID
+                });
+            }
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index"); // ili neka druga akcija nakon spremanja
+        }
+
+
 
     }
 }

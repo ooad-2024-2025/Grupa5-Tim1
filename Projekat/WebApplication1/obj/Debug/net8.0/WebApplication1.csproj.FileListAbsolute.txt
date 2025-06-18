@@ -303,8 +303,8 @@ C:\Users\pihla\Desktop\UradjenProjekat\WebApplication1\obj\Debug\net8.0\WebAppli
 C:\Users\pihla\Desktop\UradjenProjekat\WebApplication1\obj\Debug\net8.0\ref\WebApplication1.dll
 C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\bin\Debug\net8.0\appsettings.json
-C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\bin\Debug\net8.0\WebApplication1.staticwebassets.endpoints.json
 C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\bin\Debug\net8.0\WebApplication1.staticwebassets.runtime.json
+C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\bin\Debug\net8.0\WebApplication1.staticwebassets.endpoints.json
 C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\bin\Debug\net8.0\WebApplication1.exe
 C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\bin\Debug\net8.0\WebApplication1.deps.json
 C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\bin\Debug\net8.0\WebApplication1.runtimeconfig.json
@@ -585,6 +585,7 @@ C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\obj\Debug\net8.0
 C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\obj\Debug\net8.0\WebApplication1.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\obj\Debug\net8.0\WebApplication1.RazorAssemblyInfo.cache
 C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\obj\Debug\net8.0\WebApplication1.RazorAssemblyInfo.cs
+C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\obj\Debug\net8.0\WebApplication1.sourcelink.json
 C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\obj\Debug\net8.0\scopedcss\bundle\WebApplication1.styles.css
 C:\Users\pihla\Desktop\UradjenProjekat\Projekat\WebApplication1\obj\Debug\net8.0\scopedcss\projectbundle\WebApplication1.bundle.scp.css

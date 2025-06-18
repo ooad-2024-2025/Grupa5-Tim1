@@ -47,6 +47,11 @@
                                 <button type="submit" class="btn btn-danger btn-sm">Obriši</button>
                             </form>
                         }
+                        @if (User.IsInRole("Dekan"))
+                        {
+                            <a asp-action="EditProfesorPredmeti" asp-route-id="@profesor.Id" class="btn btn-warning btn-sm">Edit</a>
+                        }
+
                     </td>
                 </tr>
             }
